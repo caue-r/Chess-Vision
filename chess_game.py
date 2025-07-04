@@ -23,7 +23,8 @@ def draw_board(screen, flipped):
     for r in range(8):
         for c in range(8):
             draw_r = 7 - r if flipped else r
-            pygame.draw.rect(screen, colors[(r+c)%2], pygame.Rect(c*SQUARE_SIZE, draw_r*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
+            draw_c = 7 - c if flipped else c
+            pygame.draw.rect(screen, colors[(r+c)%2], pygame.Rect(draw_c*SQUARE_SIZE, draw_r*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
 
 def draw_pieces(screen, board, flipped):
     for r in range(8):
@@ -31,15 +32,18 @@ def draw_pieces(screen, board, flipped):
             piece = board[r][c]
             if piece != '--':
                 draw_r = 7 - r if flipped else r
-                screen.blit(IMAGES[piece], pygame.Rect(c*SQUARE_SIZE, draw_r*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
+                draw_c = 7 - c if flipped else c
+                screen.blit(IMAGES[piece], pygame.Rect(draw_c*SQUARE_SIZE, draw_r*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
 
 def highlight_squares(screen, squares, color, flipped):
     s = pygame.Surface((SQUARE_SIZE, SQUARE_SIZE), pygame.SRCALPHA)
     s.fill(color)
     for square in squares:
         c = square % 8
-        r = 7 - (square // 8) if not flipped else square // 8
-        screen.blit(s, (c*SQUARE_SIZE, r*SQUARE_SIZE))
+        r = 7 - (square // 8)
+        draw_r = 7 - r if flipped else r
+        draw_c = 7 - c if flipped else c
+        screen.blit(s, (draw_c*SQUARE_SIZE, draw_r*SQUARE_SIZE))
 
 def draw_turn_display(screen, turn):
     font = pygame.font.SysFont("Arial", 30)
@@ -124,7 +128,8 @@ def main():
                 if HEIGHT - 40 <= my <= HEIGHT - 5 and WIDTH//2 - 60 <= mx <= WIDTH//2 + 60:
                     flipped = not flipped
                 elif my < WIDTH:
-                    col = mx // SQUARE_SIZE
+                    col = 7 - (mx // SQUARE_SIZE) if flipped else mx // SQUARE_SIZE
+                    row = mx // SQUARE_SIZE if flipped else 7 - (my // SQUARE_SIZE)
                     row = 7 - (my // SQUARE_SIZE) if not flipped else my // SQUARE_SIZE
                     square = chess.square(col, row)
                     piece = board.piece_at(square)
