@@ -28,8 +28,10 @@ cd chess-vision
 
 ### 2️⃣ Instalar dependências
 
+Instale todas as dependências de forma rápida usando:
+
 ```bash
-pip install pygame python-chess
+pip install -r requirements.txt
 ```
 
 ### 3️⃣ Baixar e configurar o Stockfish
