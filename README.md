@@ -1,70 +1,70 @@
 # ♟️ Chess Vision
 
-Chess Vision é um **projeto experimental** de treino de xadrez em Python com visualização das melhores jogadas calculadas pelo Stockfish, destaque de movimentos legais, promoção customizada, desfazer jogadas e opção de inverter o tabuleiro para treinar de diferentes perspectivas.
+Chess Vision is an **experimental project** for chess training in Python with visualization of the best moves calculated by Stockfish, highlighting legal moves, custom promotion, undo moves, and the option to flip the board to train from different perspectives.
 
-Ideal para **estudo e prática de partidas com feedback visual em tempo real**.
-
----
-
-## ✅ Recursos
-
-- Destaque em **azul** da **melhor jogada** sugerida pelo Stockfish em tempo real.
-- Destaque em **verde** dos **movimentos legais** da peça selecionada.
-- **Promoção customizada** (dama, torre, bispo, cavalo).
-- **Desfazer jogadas** (tecla `U`).
-- **Botão de inverter tabuleiro** para treinar de ambos os lados.
-- Interface leve em **Pygame**.
+Ideal for **studying and practicing games with real-time visual feedback**.
 
 ---
 
-## 🚀 Como usar
+## ✅ Features
 
-### 1️⃣ Clonar o repositório
+- **Blue highlight** for the **best move** suggested by Stockfish in real time.
+- **Green highlight** for the **legal moves** of the selected piece.
+- **Custom promotion** (queen, rook, bishop, knight).
+- **Undo moves** (key `U`).
+- **Flip board button** to train from both sides.
+- Lightweight interface in **Pygame**.
+
+---
+
+## 🚀 How to Use
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/caue-r/chess-vision.git
 cd chess-vision
 ```
 
-### 2️⃣ Instalar dependências
+### 2️⃣ Install Dependencies
 
-Instale todas as dependências de forma rápida usando:
+Install all dependencies quickly using:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Baixar e configurar o Stockfish
+### 3️⃣ Download and Configure Stockfish
 
-O projeto usa o [Stockfish](https://stockfishchess.org/download/) para calcular as melhores jogadas:
+The project uses [Stockfish](https://stockfishchess.org/download/) to calculate the best moves:
 
-- Baixe a versão do Stockfish para o seu sistema operacional.
-- Extraia o executável (ex: `stockfish_16_x64_avx2.exe`).
-- Renomeie para `stockfish.exe`.
-- Coloque o `stockfish.exe` na **mesma pasta do `chess_game.py`**.
-
----
-
-## 🎮 Controles
-
-- **Clique em uma peça** para ver seus movimentos legais em verde.
-- **Clique no destino** para mover a peça.
-- **Tecla `U`**: desfaz a última jogada.
-- **Botão “Inverter Tabuleiro”**: alterna a visão do tabuleiro.
+- Download the Stockfish version for your operating system.
+- Extract the executable (e.g., `stockfish_16_x64_avx2.exe`).
+- Rename it to `stockfish.exe`.
+- Place `stockfish.exe` in the **same folder as `chess_game.py`**.
 
 ---
 
-## 🖼️ Créditos dos ícones
+## 🎮 Controls
 
-As peças utilizadas são do conjunto **Fresca** do [Lichess](https://lichess.org), disponíveis sob licença CC0 no repositório:
+- **Click a piece** to see its legal moves in green.
+- **Click the destination** to move the piece.
+- **Key `U`**: undo the last move.
+- **“Flip Board” button**: switch the board perspective.
+
+---
+
+## 🖼️ Icon Credits
+
+The pieces used are from the **Fresca** set by [Lichess](https://lichess.org), available under CC0 license in the repository:
 
 🔗 [https://github.com/lichess-org/lila/tree/master/public/piece/fresca](https://github.com/lichess-org/lila/tree/master/public/piece/fresca)
 
 ---
 
-## ⚠️ Aviso
+## ⚠️ Warning
 
-Este é **apenas um projeto experimental** para fins de aprendizado e treino pessoal.  
-Não recomendado para uso em produção ou análise avançada de partidas.
+This is **only an experimental project** for learning and personal training purposes.  
+Not recommended for production use or advanced game analysis.
 
 ---
